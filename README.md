@@ -6,7 +6,7 @@ cd /notebooks/animate
 
 chmod +x install.sh
 
-./install.sh
+/notebooks/animate/install.sh
 
 # Run
 
