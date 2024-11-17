@@ -12,14 +12,6 @@ error_exit() {
 # Trap any command that exits with a non-zero status
 trap 'error_exit $LINENO "$BASH_COMMAND"' ERR
 
-# Step 1: Clone the Github Repo
-echo "Cloning the GitHub repository..."
-if [ ! -d "animate" ]; then
-    git clone https://github.com/interactjoy/animate.git
-else
-    echo "Repository already cloned, skipping..."
-fi
-
 # Step 2: Install MiniConda
 echo "Downloading and installing Miniconda..."
 if [ ! -d "/notebooks/Miniconda" ]; then
