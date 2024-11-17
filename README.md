@@ -1,14 +1,12 @@
 # Install
 
-#!/bin/bash
-
 git clone https://github.com/interactjoy/animate.git
 
-cd /notebooks/animate || { echo "Failed to change directory"; exit 1; }
+cd /notebooks/animate
 
 chmod +x install.sh
 
-./install.sh || { echo "Installation failed"; exit 1; }
+./install.sh
 
 # Run
 
