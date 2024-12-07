@@ -9,6 +9,7 @@ chmod +x install.sh
 /notebooks/animate/install.sh
 
 # Run
+cd /notebooks/animate
 
 chmod +x run.sh
 
