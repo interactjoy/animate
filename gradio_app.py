@@ -32,6 +32,11 @@ def dynamicrafter_demo(result_dir='./tmp/', res=512):
             random_seed = random.randint(0, 50000)  # Generate a random seed for each iteration
             output_path = image2video.get_image(image1, prompt, steps, cfg_scale, eta, motion, random_seed, image2)
             if os.path.exists(output_path):
+                # Ensure the file has a video extension
+                if not output_path.endswith('.mp4'):
+                    new_output_path = output_path + '.mp4'
+                    os.rename(output_path, new_output_path)
+                    output_path = new_output_path
                 video_paths.append(output_path)
             else:
                 print(f"Error: Video file not found at {output_path}")
@@ -53,7 +58,7 @@ def dynamicrafter_demo(result_dir='./tmp/', res=512):
                     i2v_generate_btn = gr.Button("Generate")
                 with gr.Column(scale=1):
                     i2v_input_image2 = gr.Image(label="Input Image2", elem_id="input_img2")
-                    i2v_output_gallery = gr.Gallery(label="Generated Videos", elem_id="output_gallery")
+                    i2v_output_gallery = gr.Gallery(label="Generated Videos", elem_id="output_gallery", type="video")
 
             # Example demonstrations
             gr.Examples(examples=i2v_examples_interp_512,
