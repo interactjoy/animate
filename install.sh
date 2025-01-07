@@ -60,7 +60,11 @@ else
     echo "requirements.txt not found, skipping requirements installation."
 fi
 
-# Step 10: Run the configuration script
+# Step 10: Install xformers
+echo "Installing xformers..."
+pip install xformers --no-deps
+
+# Step 11: Run the configuration script
 echo "Running the configuration script..."
 if [ -f "scripts/run.sh" ]; then
     sh scripts/run.sh
@@ -68,7 +72,7 @@ else
     echo "Configuration script not found, skipping."
 fi
 
-# Step 11: Launch the program
+# Step 12: Launch the program
 echo "Launching the program..."
 if [ -f "gradio_app.py" ]; then
     python gradio_app.py
