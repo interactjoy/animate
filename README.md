@@ -1,11 +1,8 @@
 # Install
 
-git clone https://github.com/interactjoy/animate.git
-
-cd /notebooks/animate
-
-chmod +x install.sh
-
+git clone https://github.com/interactjoy/animate.git && \
+cd /notebooks/animate && \
+chmod +x install.sh && \
 /notebooks/animate/install.sh
 
 # Run
