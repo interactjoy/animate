@@ -1,4 +1,6 @@
-# Install
+//copy&paste to install.
+
+# Install 
 
 git clone https://github.com/interactjoy/animate.git && \
 cd /notebooks/animate && \
